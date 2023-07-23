@@ -1,0 +1,241 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    background-color: #950D86;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.3s ease;
+}
+
+header h1 {
+    color: #fff;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+header:hover h1 {
+    color: #FFCA08;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin-right: 20px;
+    transition: opacity 0.3s ease;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #FFCA08;
+}
+
+/* Hero Section Styles */
+#hero {
+    background-color: #950D86;
+    color: #fff;
+    padding: 100px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+#hero h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+#hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+#hero .btn {
+    display: inline-block;
+    background-color: #FFCA08;
+    color: #333;
+    padding: 12px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    animation: scaleIn 0.5s ease-in-out;
+}
+
+#hero .btn:hover {
+    background-color: #fff;
+    color: #950D86;
+    transform: scale(1.05);
+}
+
+/* Features Section Styles */
+#features {
+    padding: 60px 0;
+}
+
+#features h3 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 40px;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.feature {
+    text-align: center;
+    margin-bottom: 30px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    transition: transform 0.3s ease;
+}
+
+.feature-icon:hover {
+    transform: rotate(360deg);
+}
+
+.feature h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #950D86;
+    transition: color 0.3s ease;
+}
+
+.feature:hover h4 {
+    color: #FFCA08;
+}
+
+.feature p {
+    font-size: 16px;
+    color: #777;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #950D86;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+footer p {
+    font-size: 14px;
+    color: #fff;
+}
+
+/* Keyframe Animations */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    0% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Cursor Animation */
+.cursor {
+    position: fixed;
+    top: -20px;
+    left: -20px;
+    z-index: 9999;
+    pointer-events: none;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: 2px solid #950D86;
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.3s ease;
+    mix-blend-mode: difference;
+}
+
+.cursor.active {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(2);
+    background-color: #950D86;
+    animation: cursorPulse 1.5s infinite;
+}
+
+@keyframes cursorPulse {
+    0% {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 1;
+    }
+}
+
+/* Scroll Animations */
+.animated {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.animated.show {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease, transform 1s ease;
+}
